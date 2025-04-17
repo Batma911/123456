@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辰星面相运势</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .upload-area {
+            border: 2px dashed #4A90E2;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .upload-area.hover {
+            background-color: #E0F7FA;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-4">
+            <h1 class="text-2xl font-bold">辰星面相运势</h1>
+            <nav class="mt-2">
+                <ul class="flex space-x-4">
+                    <li><a href="#hero" class="text-blue-500">首页</a></li>
+                    <li><a href="#features" class="text-blue-500">功能</a></li>
+                    <li><a href="#pricing" class="text-blue-500">定价</a></li>
+                    <li><a href="#faq" class="text-blue-500">常见问题</a></li>
+                    <li><a href="#contact" class="text-blue-500">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-blue-500 text-white text-center py-20">
+        <h2 class="text-4xl font-bold">上传您的照片，获取面相运势分析</h2>
+        <p class="mt-4">专业的面相运势计算，助您做出明智的选择</p>
+        <div id="upload-area" class="upload-area mt-4">
+            点击或拖拽照片至此处
+            <input type="file" id="file-input" class="hidden" accept="image/*" />
+        </div>
+        <button id="calculate-button" class="mt-4 bg-white text-blue-500 px-4 py-2 rounded">计算运势</button>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="container mx-auto py-20">
+        <h2 class="text-3xl font-bold text-center">用户评价</h2>
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-white p-4 shadow rounded">
+                <p>非常准确的分析，帮助我选择了合适的合作伙伴！</p>
+                <p class="text-right">- 用户A</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <p>我对结果非常满意，推荐给我的朋友们！</p>
+                <p class="text-right">- 用户B</p>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <p>专业的服务，值得信赖！</p>
+                <p class="text-right">- 用户C</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container mx-auto py-20">
+        <h2 class="text-3xl font-bold text-center">常见问题</h2>
+        <div class="mt-10">
+            <h3 class="font-bold">Q: 如何上传照片？</h3>
+            <p>A: 点击首页的上传按钮，选择您的照片即可。</p>
+            <h3 class="font-bold">Q: 结果准确吗？</h3>
+            <p>A: 我们结合了中西方面相学知识，提供专业的分析。</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="container mx-auto py-20">
+        <h2 class="text-3xl font-bold text-center">我们的功能</h2>
+        <ul class="mt-10 list-disc list-inside">
+            <li>基于面相学的运势分析</li>
+            <li>中西方知识结合，分析更全面</li>
+            <li>用户友好的界面，简单易用</li>
+        </ul>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="container mx-auto py-20">
+        <h2 class="text-3xl font-bold text-center">定价</h2>
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-white p-4 shadow rounded">
+                <h3 class="font-bold">基础版</h3>
+                <p>价格：￥99</p>
+                <p>包含基本的面相分析</p>
+                <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">购买</button>
+            </div>
+            <div class="bg-white p-4 shadow rounded">
+                <h3 class="font-bold">高级版</h3>
+                <p>价格：￥199</p>
+                <p>包含详细的面相分析和建议</p>
+                <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded">购买</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="container mx-auto py-20">
+        <h2 class="text-3xl font-bold text-center">如何运作</h2>
+        <ol class="mt-10 list-decimal list-inside">
+            <li>上传您的清晰人脸照片</li>
+            <li>点击计算运势按钮</li>
+            <li>获取专业的面相运势分析结果</li>
+        </ol>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p>版权所有 &copy; 2025 辰星</p>
+        <p>联系方式: <a href="mailto:cjg3103123@gmail.com" class="text-blue-400">cjg3103123@gmail.com</a></p>
+    </footer>
+
+    <script>
+        const uploadArea = document.getElementById('upload-area');
+        const fileInput = document.getElementById('file-input');
+
+        uploadArea.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('hover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('hover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('hover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                fileInput.files = files; // 将拖拽的文件赋值给文件输入
+                uploadArea.textContent = files[0].name; // 显示文件名
+            }
+        });
+
+        fileInput.addEventListener('change', () => {
+            const files = fileInput.files;
+            if (files.length > 0) {
+                uploadArea.textContent = files[0].name; // 显示文件名
+            }
+        });
+    </script>
+
+</body>
+</html>
